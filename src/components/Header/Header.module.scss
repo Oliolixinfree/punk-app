@@ -4,11 +4,29 @@
 }
 
 .wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 .title {
+  color: var(--colors-text);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
 }
 
 .modeSwitcher {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 0.75rem;
+
+  color: var(--colors-text);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  text-transform: capitalize;
   cursor: pointer;
 }

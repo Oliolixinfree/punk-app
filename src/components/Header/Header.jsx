@@ -21,7 +21,8 @@ const Header = () => {
             Punk Beer
           </a>
           <div className={styles.modeSwitcher} onClick={toggleTheme}>
-            <IoMoon /> Light Theme
+            {theme === 'light' ? <IoMoonOutline size={'16px'} /> : <IoMoon size={'16px'} />}
+            {theme} Theme
           </div>
         </div>
       </Container>
