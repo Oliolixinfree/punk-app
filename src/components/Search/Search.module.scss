@@ -1,0 +1,26 @@
+.inputContainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+
+  background-color: var(--colors-ui-base);
+  border-radius: var(--radi);
+  box-shadow: var(--shadow);
+
+  width: 100%;
+  padding: 1rem 2rem;
+  // margin-bottom: 1.5rem;
+
+  @media (min-width: 767px) {
+    margin-bottom: 0;
+    width: 280px;
+  }
+}
+
+.input {
+  border: none;
+  outline: none;
+  background-color: var(--colors-ui-base);
+  color: var(--color-text);
+}
