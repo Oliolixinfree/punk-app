@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomSelect from '../CustomSelect/CustomSelect';
 import Search from '../Search/Search';
 import styles from './Controls.module.scss';
@@ -10,9 +10,13 @@ export const options = [
   { value: 'Test4', label: 'Test4' },
 ];
 
-const Controls = () => {
+const Controls = ({ onSearch }) => {
   const [search, setSearch] = useState('');
   // const [something, setSomething] = useState('');
+
+  useEffect(() => {
+    onSearch(search);
+  }, [search]);
 
   return (
     <div className={styles.wrapper}>

@@ -9,7 +9,21 @@ import Card from '../components/Card/Card';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = ({ beers, setBeers }) => {
-  // const [beers, setBeers] = useState([]);
+  const [filtredBeers, setFiltredBeers] = useState(beers);
+
+  const handleSearch = (search, region) => {
+    let data = [...beers];
+
+    // if (region) {
+    //   data = data.filter((b) => b.region.includes(region));
+    // }
+
+    if (search) {
+      data = data.filter((b) => b.name.toLowerCase().includes(search.toLowerCase()));
+    }
+
+    setFiltredBeers(data);
+  };
 
   const navigate = useNavigate();
 
@@ -23,11 +37,16 @@ const HomePage = ({ beers, setBeers }) => {
     }
   }, []);
 
+  useEffect(() => {
+    handleSearch();
+    // eslint-disable-next-line
+  }, [beers]);
+
   return (
     <>
-      <Controls />
+      <Controls onSearch={handleSearch} />
       <List>
-        {beers.map((b) => {
+        {filtredBeers.map((b) => {
           const beerInfo = {
             img: b.image_url,
             name: b.name,
