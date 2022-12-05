@@ -12,10 +12,18 @@
 }
 
 .title {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 0.5rem;
+
   color: var(--colors-text);
-  font-size: var(--fs-md);
   font-weight: var(--fw-bold);
   text-decoration: none;
+
+  span {
+    font-size: 26px;
+  }
 }
 
 .modeSwitcher {
